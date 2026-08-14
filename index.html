@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Awareness Hub</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #22c55e;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      background-color: var(--card-bg);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--text);
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .container {
+      max-width: 800px;
+      width: 90%;
+      margin: 2rem 0;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
+    }
+
+    /* Grid for Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* Quiz Area */
+    .quiz-box {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .question {
+      margin-bottom: 1.5rem;
+    }
+
+    .question p {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .options label {
+      display: block;
+      background: #334155;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .options label:hover {
+      background: #475569;
+    }
+
+    .options input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+
+    button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: var(--accent-hover);
+    }
+
+    #result {
+      margin-top: 1rem;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🛡️ Cybersecurity Awareness Hub</h1>
+    <p>Essential security practices to keep your data safe online.</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Core Concepts Section -->
+    <h2 class="section-title">Core Security Best Practices</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Multi-Factor Auth (MFA)</h3>
+        <p>Always enable MFA on your accounts. It adds a secondary verification layer (like an authenticator app) even if your password is compromised.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Phishing Awareness</h3>
+        <p>Be cautious with unexpected emails or links asking for sensitive credentials. Always verify the sender's domain address.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Patching & Updates</h3>
+        <p>Keep your operating systems, browsers, and applications updated to protect against publicly known vulnerabilities.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Quiz Section -->
+    <h2 class="section-title">Test Your Security Knowledge</h2>
+    <div class="quiz-box">
+      <form id="quizForm">
+        
+        <!-- Q1 -->
+        <div class="question">
+          <p>1. What is the safest way to store multiple complex passwords?</p>
+          <div class="options">
+            <label><input type="radio" name="q1" value="a"> Write them on a sticky note near your desk</label>
+            <label><input type="radio" name="q1" value="b"> Use an encrypted Password Manager</label>
+            <label><input type="radio" name="q1" value="c"> Reuse the same password everywhere</label>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+          <p>2. What does HTTPS in a URL indicate?</p>
+          <div class="options">
+            <label><input type="radio" name="q2" value="a"> The web traffic is encrypted using TLS/SSL</label>
+            <label><input type="radio" name="q2" value="b"> The website is guaranteed 100% virus-free</label>
+            <label><input type="radio" name="q2" value="c"> The website belongs to a government agency</label>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+          <p>3. What should you do if you receive an urgent email asking for your password?</p>
+          <div class="options">
+            <label><input type="radio" name="q3" value="a"> Reply with the password immediately</label>
+            <label><input type="radio" name="q3" value="b"> Click the link in the email to change it</label>
+            <label><input type="radio" name="q3" value="c"> Ignore/Report it; legitimate services never ask for passwords</label>
+          </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function checkAnswers() {
+      // Correct answers key
+      const answers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'c'
+      };
+
+      let score = 0;
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+
+      for (let key in answers) {
+        const selected = form.elements[key].value;
+        if (selected === answers[key]) {
+          score++;
+        }
+      }
+
+      if (score === 3) {
+        resultDiv.style.color = 'var(--success)';
+        resultDiv.textContent = `Score: ${score}/3 — Perfect! You have great cybersecurity habits! 🏆`;
+      } else {
+        resultDiv.style.color = 'var(--danger)';
+        resultDiv.textContent = `Score: ${score}/3 — Review the tips above and try again! 💡`;
+      }
+    }
+  </script>
+
+</body>
+</html>
